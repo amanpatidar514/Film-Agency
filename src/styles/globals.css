@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #030509;
+  }
+
+  body {
+    @apply bg-midnight-950 text-cinema-50 font-inter antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cinzel;
+  }
+}
+
+@layer utilities {
+  .text-glow-gold {
+    text-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
+  }
+
+  .text-glow-white {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  .bg-glass {
+    @apply bg-midnight-900/60 backdrop-blur-md border border-white/10;
+  }
+
+  .bg-glass-gold {
+    @apply bg-gold-500/10 backdrop-blur-md border border-gold-500/20;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .gold-gradient-text {
+    @apply bg-gradient-to-r from-amber-200 via-gold-400 to-amber-500 bg-clip-text text-transparent;
+  }
+
+  .film-grain {
+    position: relative;
+  }
+
+  .film-grain::after {
+    content: "";
+    @apply absolute inset-0 pointer-events-none z-50 opacity-[0.04];
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    filter: contrast(150%) brightness(100%);
+  }
+
+  .mask-radial-vignette {
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-midnight-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-midnight-700 rounded-full hover:bg-gold-600 transition-colors;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline {
+  @apply absolute inset-0 pointer-events-none overflow-hidden z-10;
+}
+
+.scanline::after {
+  content: "";
+  @apply absolute inset-0 w-full h-[100px] opacity-[0.05];
+  background: linear-gradient(to bottom, transparent 0%, rgba(250, 204, 21, 0.5) 50%, transparent 100%);
+  animation: scanline 8s linear infinite;
+}

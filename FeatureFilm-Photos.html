@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feature Film Production Photos - Pexels</title>
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .photo-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .photo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .photo-info {
+            padding: 15px;
+        }
+        .photo-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .photo-photographer {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feature Film Production Photos - Pexels</h1>
+    <div class="photo-grid">
+        <div class="photo-card">
+            <img src="https://images.pexels.com/photos/8089657/pexels-photo-8089657.jpeg?cs=tinysrgb&dpr=1&w=500" alt="Studio filming session">
+            <div class="photo-info">
+                <div class="photo-title">Behind the scenes of a studio filming session</div>
+                <div class="photo-photographer">Photographer: Ron Lach</div>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://images.pexels.com/photos/34516668/pexels-photo-34516668.jpeg?cs=tinysrgb&dpr=1&w=500" alt="Professional video camera">
+            <div class="photo-info">
+                <div class="photo-title">High-quality professional video camera setup</div>
+                <div class="photo-photographer">Photographer: Caleboquendo</div>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://images.pexels.com/photos/5274483/pexels-photo-5274483.jpeg?cs=tinysrgb&dpr=1&w=500" alt="Cinematic display">
+            <div class="photo-info">
+                <div class="photo-title">Close-up of cinematic display showing filmmaker at work</div>
+                <div class="photo-photographer">Photographer: Cottonbro</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
