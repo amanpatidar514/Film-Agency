@@ -6,11 +6,13 @@ import Services from './pages/Services.tsx'
 import Contact from './pages/Contact.tsx'
 import { Header } from './components/layout/Header.tsx'
 import { Footer } from './components/layout/Footer.tsx'
+import { ScrollToTop } from './components/ScrollToTop'
 
 function App() {
   return (
     <div className="min-h-screen bg-midnight-900 text-cinema-50 overflow-x-hidden font-inter">
       <Header />
+      <ScrollToTop />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
